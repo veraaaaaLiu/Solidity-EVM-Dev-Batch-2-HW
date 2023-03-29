@@ -86,11 +86,7 @@ https://ethereum.stackexchange.com/questions/58535/understanding-the-state-trans
 ```
 
 Q8: Full node 和 light node有什麼區別？ \
-A8: 全節點儲存了所有區塊的 Block Header 與 Body（交易列表），而輕節點只儲存最小量的狀態：即「區塊標頭 Block Header」
-
-
-
-
+A8: 全節點儲存了所有區塊的 Block Header 與 Body（交易列表），而輕節點只儲存最小量的狀態，即區塊標頭 Block Header。
 
 
 
