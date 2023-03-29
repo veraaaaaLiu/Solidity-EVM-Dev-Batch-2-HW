@@ -7,7 +7,7 @@ Run a local Ethereum Mainnet fork with Ganache-cli and connect MetaMask, followi
 
 ### hardhat
 
-Register at https://www.alchemy.com/, go to Apps and click "VIEW KEY" to get the API key.
+Register at https://www.alchemy.com/ , go to Apps and click "VIEW KEY" to get the API key.
 
 ![](https://i.imgur.com/jWdHsM4.jpg)
 
@@ -15,14 +15,14 @@ Open the terminal in vscode, and enter the following command.
 
 ```
 npx hardhat node --fork https://eth-mainnet.alchemyapi.io/v2/<key>
- ```
+```
 ![](https://i.imgur.com/iHIBCMI.jpg)
 
 After installing the environment, enter the command again.
 
 ```
 npx hardhat node --fork https://eth-mainnet.alchemyapi.io/v2/<key>
- ```
+```
 You will be able to see a success screen.
 
 ![](https://i.imgur.com/wGNTu2j.jpg)

@@ -1,0 +1,31 @@
+yarn run v1.22.11
+warning package.json: License should be a valid SPDX license expression
+$ tsup
+CLI Building entry: {"index":"src/index.ts","connectors/miniProgram":"connectors/miniProgram/index.ts","connectors/binanceWallet":"connectors/binanceWallet/index.ts","connectors/blocto":"connectors/blocto/index.ts","connectors/trustWallet":"connectors/trustWallet/index.ts"}
+CLI Using tsconfig: tsconfig.json
+CLI tsup v6.6.3
+CLI Using tsup config: /Users/veraliu/Desktop/test/pancake-frontend/pancake-frontend/packages/wagmi/tsup.config.ts
+CLI Target: es2015
+ESM Build start
+CJS Build start
+CJS dist/index.js                    4.88 KB
+CJS dist/connectors/binanceWallet.js 5.11 KB
+CJS dist/connectors/trustWallet.js   5.66 KB
+CJS dist/connectors/blocto.js        8.29 KB
+CJS dist/connectors/miniProgram.js   4.03 KB
+CJS ⚡️ Build success in 151ms
+ESM dist/index.mjs                    2.48 KB
+ESM dist/connectors/miniProgram.mjs   2.46 KB
+ESM dist/connectors/trustWallet.mjs   4.00 KB
+ESM dist/connectors/binanceWallet.mjs 3.54 KB
+ESM dist/chunk-2L3ZO4UM.mjs           1.42 KB
+ESM dist/connectors/blocto.mjs        5.39 KB
+ESM ⚡️ Build success in 166ms
+DTS Build start
+DTS ⚡️ Build success in 25242ms
+DTS dist/index.d.ts                    1.12 KB
+DTS dist/connectors/miniProgram.d.ts   817.00 B
+DTS dist/connectors/binanceWallet.d.ts 1.52 KB
+DTS dist/connectors/blocto.d.ts        1.45 KB
+DTS dist/connectors/trustWallet.d.ts   958.00 B
+Done in 27.61s.
