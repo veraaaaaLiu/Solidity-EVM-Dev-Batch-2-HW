@@ -399,6 +399,8 @@ run "Fully working example for Remix" 的 code
 
 [Uniswap V3 原理解析](https://mirror.xyz/0xCf19c7444b775f4fede9b7B53b4d708338004aa4/vC-wd8t-Z2cXdpV3jKQsagoGHrRNMRAp-LDPISQ71CA)
 
+[跨鏈橋比較](https://medium.com/taipei-ethereum-meetup/%E8%B7%A8%E9%8F%88%E6%A9%8B%E6%AF%94%E8%BC%83-4327192f7200)
+
 ---
 
 
