@@ -214,3 +214,6 @@ npm start
 
 [【Ethereum 智能合約開發筆記】深入智能合約 ABI](https://medium.com/taipei-ethereum-meetup/ethereum-%E6%99%BA%E8%83%BD%E5%90%88%E7%B4%84%E9%96%8B%E7%99%BC%E7%AD%86%E8%A8%98-%E6%B7%B1%E5%85%A5%E6%99%BA%E8%83%BD%E5%90%88%E7%B4%84-abi-268ececb70ae)
 
+[如何部署智能合約？](https://gasolin.gitbooks.io/learn-ethereum-dapp/content/deploy-smart-contract.html)
+
+[合約開發框架 Foundry 介紹及使用心得](https://medium.com/imtoken/foundry-introduction-and-our-experience-sharing-d9d82bf012ae)
