@@ -8,7 +8,7 @@ MVP：
 * 把 stract 加進去 code
 * 測試再新增一些
 
-
+--
 
 ticket.sol
      
