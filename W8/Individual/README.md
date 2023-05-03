@@ -1,12 +1,13 @@
 # 個人作業
 
 
-## 看著 Quiz2 的合約（[在此](https://github.com/z-institute/Quiz/blob/main/contracts/Quiz_02.sol)），嘗試用 Hardhat 框架寫出 Quiz2 合約的 test，並跑 npx hardhat coverage，把測試涵蓋率提高到 100%
+## Quiz2 的[合約](https://github.com/z-institute/Quiz/blob/main/contracts/Quiz_02.sol)，用 Hardhat 框架寫出 test，並跑 npx hardhat coverage，把測試涵蓋率提高到 100%
 * 遇到困難的話可以看答案，但建議先自己嘗試後，真的想不到再對照：[https://github.com/z-institute/Quiz/blob/main/test/Quiz_02.test.js](https://github.com/z-institute/Quiz/blob/main/test/Quiz_02.test.js)
 
 --
 
 先打開 console.log 看 token.functions 提供了幾項 api 可以使用
+
 ```
   before(async function () {
     const MyToken = await ethers.getContractFactory("MyToken");
@@ -14,10 +15,8 @@
     console.log(token.functions);
   });
 ```
-![](https://i.imgur.com/Gx78dH8.png)
 
 --
-
 
 test.js
 
@@ -54,7 +53,7 @@ describe("Quiz 2 test", async function () {
     )
   });
 
-  // 測試給他一定的錢，mint的數量
+  // 測試給他一定的錢，查看mint的數量
   it("Should be able to mint to specific account", async function () {
     await contract.mint(owner.address, 0, {value: ethers.utils.parseEther("0.1")})
     expect(await contract.ownerOf(0)).to.equal(owner.address);
@@ -79,9 +78,15 @@ describe("Quiz 2 test", async function () {
 
 --
 
-有參考 https://github.com/z-institute/Quiz/blob/main/test/Quiz_02.test.js 才順利寫完
+有部分參考 https://github.com/z-institute/Quiz/blob/main/test/Quiz_02.test.js 才順利寫完
+
+```
+npx hardhat coverage
+```
 
 ![](https://i.imgur.com/SgnDfHz.png)
+
+打開 coverage / index.html
 
 ![](https://i.imgur.com/I7a9LLI.png)
 
@@ -109,11 +114,17 @@ npm install
 npx hardhat node
 ```
 
+有出現錯誤，因為套件沒有安裝完全
+
 ![](https://i.imgur.com/DTGBn6q.png)
+
+先安裝套件
 
 ```
  npm install --save-dev "@types/mocha@^9.1.0" "@typechain/ethers-v5@^10.1.0" "@typechain/hardhat@^6.1.2" "ts-node@>=8.0.0" "typechain@^8.1.0" "typescript@>=4.5.0"
 ```
+
+再下一次 npx hardhat node
 
 ```
 npx hardhat node
@@ -144,20 +155,21 @@ npm start
 
 在 dapp.js 裡面，發現這個專案是用 [ether.js](https://learnblockchain.cn/ethers_v5/) 來和合約互動
 
-![](https://i.imgur.com/oFQpB33.png)
+![](https://i.imgur.com/0GtdeSJ.png)
 
 合約部署後會產生 ABI 文件，我們就是透過 ABI 文件知道這個智能合約提供哪些 function 以及應該要傳入什麼樣的參數，所以 init 的時候必須提供合約 address 和合約 ABI
 
 ![](https://i.imgur.com/FdFk5y7.png)
 
-![](https://i.imgur.com/cKVfBq6.png)
+合約 ABI： contracts / Token.json
 
-合約 address 放在 contract-address.json
+![](https://i.imgur.com/lbtEqZI.png)
+
+合約 address： contracts / contract-address.json
 
 > Q: 但如果要和多個合約互動，要怎麼做？
 
-![](https://i.imgur.com/tWiKCkf.png)
-
+![](https://i.imgur.com/M4W8ZUf.png)
 
 
 --
@@ -186,8 +198,7 @@ npm start
 
 從 code 來看，他會在交易回傳的 receipt 不為 0 時，確認交易成功，並執行 _updateBalance 來更新餘額
 
-![](https://i.imgur.com/jzAJiJe.png)
-
+![](https://i.imgur.com/X3T0MNj.png)
 
 --
 
@@ -200,20 +211,17 @@ npm start
 
 結論：
 
-比較簡單的做法就是不要用array去存，用一個 mapping 去存這個地址是的白名單
+比較簡單的做法就是不要用 array 去存，用一個 mapping 去存這個地址是的白名單
 
 ![](https://i.imgur.com/6hINtQt.png)
 
-判斷的時候直接判斷，就不用一個for loop去跑
+判斷的時候直接判斷，就不用一個 for loop 去跑
 
 ![](https://i.imgur.com/yVTZy4U.png)
 
-所以現在主流做法都是用 merkle tree 的方式來實作白名單，好處是修改名單方便，也不用這麼高的手續費
+現在主流做法都是用 merkle tree 的方式來實作白名單，好處是修改名單方便，也不用這麼高的手續費
 
 --
 
 [【Ethereum 智能合約開發筆記】深入智能合約 ABI](https://medium.com/taipei-ethereum-meetup/ethereum-%E6%99%BA%E8%83%BD%E5%90%88%E7%B4%84%E9%96%8B%E7%99%BC%E7%AD%86%E8%A8%98-%E6%B7%B1%E5%85%A5%E6%99%BA%E8%83%BD%E5%90%88%E7%B4%84-abi-268ececb70ae)
 
-[如何部署智能合約？](https://gasolin.gitbooks.io/learn-ethereum-dapp/content/deploy-smart-contract.html)
-
-[合約開發框架 Foundry 介紹及使用心得](https://medium.com/imtoken/foundry-introduction-and-our-experience-sharing-d9d82bf012ae)
