@@ -38,7 +38,9 @@ contract Ticket is Ownable, ERC1155("https://donexttime.com/{id}.json") {
 
     event TicketUsed(address indexed owner, string name);
 
-    constructor(string memory uri) ERC1155(uri) {}
+    constructor(string memory uri) ERC1155(uri) {
+        _setTokenURI(newTokenID, _tokenURI); 
+    }
 
     function mintNfts(uint256 count) external payable {
         uint256 nextId = _tokenIds.current(); // get the next token id
@@ -84,7 +86,6 @@ contract Ticket is Ownable, ERC1155("https://donexttime.com/{id}.json") {
     function _mintSingleNft(address owner, string memory tokenURI) private {
         require(totalSupply() == _tokenIds.current, "Indexing has broken down!");
         uint newTokenID = _tokenIds.current(); 
-        _setTokenURI(newTokenID, _tokenURI); 
         _tokenIds.increment(); 
     }
     function supportsInterface(bytes4 interfaceId)public view
