@@ -89,7 +89,7 @@ const App = () => {
 ## Web3Modal
 
 
-到[這裡](https://cloud.walletconnect.com/app)連結完錢包
+到[這裡](https://cloud.walletconnect.com/app)連結錢包
 
 ![](./../images/4.png)
 
@@ -231,11 +231,9 @@ ____   _________________________    _____
 
 ![](./../images/18.png)
 
-![](./../images/19.png)
+成功
 
 ![](./../images/20.png)
-
-成功
 
 ![](./../images/21.png)
 
